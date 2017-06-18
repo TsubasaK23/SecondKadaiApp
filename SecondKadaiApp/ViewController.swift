@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var name: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let resultViewController:ResultViewController = segue.destination as! ResultViewController
+        
+        resultViewController.x = name.text!
+    }
+    
+    @IBAction func unwind(segue: UIStoryboardSegue){
+        
+    }
 
 }
 
